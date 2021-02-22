@@ -14,11 +14,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>index</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
     <link rel="shortcut icon" href="https://fdn.gsmarena.com/imgroot/static/favicon.ico">
     <link rel="stylesheet" href="https://fdn.gsmarena.com/vv/assets12/css/gsmarena.css?v=31">
     <link rel="stylesheet" href="https://fdn.gsmarena.com/vv/assets12/css/index.css?v=4">
-    <script src="/JS/index.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -46,16 +46,17 @@
   <div class="moveRight">
   <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
   <a href="#" onclick="openForm()"><i class="fa fa-fw fa-user" ></i> Login</a>
- 
+   <a href="/html/register.html" style="width:auto;"><i class="fa fa-sign-in"></i>Sign Up</a>
 <div class="form-popup" id="myForm">
+ 
   <form action="signin" method="POST" class="form-container">
       <h1>Login</h1>
 
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
 
     <button type="submit" class="btn">Login</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
@@ -63,6 +64,16 @@
 </div>
 
   </div> 
+</div>
+
+<div class="tags" style="width:10%; margin:0 auto;">
+ <ul>
+   
+    <li id="comparePhones" class="article-info-meta-link light"><a href="/html/compare.html"><i class="head-icon icon-mobile-phone231 icon-compare"></i> Compare Phones</a></li>
+    <li id="compareReview" class="article-info-meta-link light"><a href="/html/reviews.html"><i class="head-icon icon-review"></i> Reviews</a></li>
+    <li id="compareNews" class="article-info-meta-link light"><a href="/html/news.html"><i class="head-icon iconcomment-count"></i> News</a></li>
+    
+</ul>
 </div>
 
 <div class="container">
@@ -76,10 +87,10 @@
               </button>
             </span>
           </div>
-        </form>
-        
-        
-        
+        </form>    
+    </div>
+  </div>
+    
         
     </div>
   </div>

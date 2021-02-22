@@ -149,3 +149,18 @@ body {
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+
+
+#comparePhones{
+	width:50%;
+}
+#compareReview{
+	width:50%;
+}
+#compareNews{
+	width:50%;
+}
+
+
+
