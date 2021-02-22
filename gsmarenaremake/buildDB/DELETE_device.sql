@@ -1,0 +1,1 @@
+delete from device where _id = 
