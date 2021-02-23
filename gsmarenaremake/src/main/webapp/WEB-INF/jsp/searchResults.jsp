@@ -10,5 +10,20 @@ pageEncoding="ISO-8859-1" %>
 </head>
 <body>
 
+<div class="row">
+	<c:forEach var="device" items="${resultsListPassed }">
+		<div class="col-md-3">
+		  <a href="">
+			<div class="card"">
+			  <!--  <img class="card-img-top" src="/images/${device.serialNumber }.jpg" alt="image">-->
+			  <div class="card-body text-center">
+			    <p class="card-text">${device.name }</p>
+			  </div>
+			</div>
+		  </a>
+		</div>
+	</c:forEach>
+</div>
+
 </body>
 </html>

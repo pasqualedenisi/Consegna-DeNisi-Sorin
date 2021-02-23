@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gruppoweb.gsm.model.Device;
 import com.gruppoweb.gsm.persistence.Constants;
@@ -12,11 +14,12 @@ import com.gruppoweb.gsm.persistence.dao.DeviceDAO;
 
 public class SearchController {
 
-	@GetMapping("/search")
-	public String showSmartphones(Model model) {
+	@PostMapping("/search")
+	public String showResults(Model model, @RequestParam String keyword) {
+		System.out.println("si");
 		DeviceDAO dao = DBManager.getInstance().deviceDAO();
-		List<Device> smartphoneList = dao.findAllByType(Constants.smartphoneTypeID);
-		model.addAttribute("smartphoneListPassed", smartphoneList);
-		return "smartphones";
+		List<Device> resultsList = dao.findAllByKeyword(keyword);
+		model.addAttribute("resultsListPassed", resultsList);
+		return "searchResults";
 	}
 }
