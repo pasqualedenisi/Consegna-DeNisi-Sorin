@@ -19,10 +19,10 @@ function deleteUsers(){
 			url: "ban",
 			method: "POST",
 			data: {id: checked.id},
-			success: function(response){alert("controlla")},
+			success: function(response){
+				checked.parentNode.parentNode.remove();
+				alert("Utenti eliminati con successo");},
 			fail: function(){alert("fail");}
 		});
-		//
-		checked.parentNode.parentNode.remove();
 	});
 }
