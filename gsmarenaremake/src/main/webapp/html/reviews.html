@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Reviews</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="../css/reviews.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  
+</head>
+
+<body>
+         
+         
+        
+<div style="background-image: url('images/background.jpg');">
+  
+  <div class="container">
+    
+
+    <div class="content-wrapper">
+      <div class="portfolio-items-wrapper">
+
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UCBJycsmduvYEL83R_U4JriQ" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+         </div>
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UC0xXUfNSFQN3qOmf_G_nT5w" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UCMiJRAwDNSNzuYeN2uWa0pA" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UCiQMYozSSTkJ2twtZM1bG9w" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UCcdoCX9WJZZrhXHmpvhgc7A" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UCzlXf-yUIaOpOjEjPrOO9TA" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UC4xZF3xguQCG76hZVUivoXw" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UCwPRdjbrlqTjWOl7ig9JLHg" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UCWsEZ9v1KC8b5VYjYbEewJA" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UCtYJT2feifBiVsxSC1S1Jwg" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UCpZy-Hfqcxf-R7nQzlv9Bvw" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="portfolio-item-wrapper">
+         <iframe class="latestVideoEmbed" vnum='0' cid="UCcdoCX9WJZZrhXHmpvhgc7A" width="355" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+
+function loadVideo(iframe) {
+  $.getJSON(reqURL + iframe.getAttribute('cid'),
+    function(data) {
+      var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+      console.log(videoNumber);
+      var link = data.items[videoNumber].link;
+      id = link.substr(link.indexOf("=") + 1);
+      iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1");
+    }
+  );
+}
+
+var iframes = document.getElementsByClassName('latestVideoEmbed');
+for (var i = 0, len = iframes.length; i < len; i++) {
+  loadVideo(iframes[i]);
+}
+</script>
+
+
+</html>
