@@ -2,6 +2,7 @@ package com.gruppoweb.gsm.controller;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import com.gruppoweb.gsm.persistence.Constants;
 import com.gruppoweb.gsm.persistence.DBManager;
 import com.gruppoweb.gsm.persistence.dao.DeviceDAO;
 
+@Controller
 public class SearchController {
 
 	@PostMapping("/search")

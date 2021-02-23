@@ -162,7 +162,7 @@ public class DeviceDAOJdbc implements DeviceDAO {
 		ArrayList<Device> toReturn = new ArrayList<Device>();
 		try {
 			Connection conn = source.getConnection();
-			String query = "select * from device where _name ~* '?'";
+			String query = "select * from device where _name ~* ?";
 			PreparedStatement statement = conn.prepareStatement(query);
 			statement.setString(1, keyword);
 			ResultSet rs = statement.executeQuery();
