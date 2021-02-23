@@ -34,7 +34,7 @@ pageEncoding="ISO-8859-1" %>
 		  <td>${user.surname }</td>
 		  <td>${user.email }</td>
 		  <td>${user.type }</td>
-		  <td><input name="bancheck" type="checkbox" id="1"></td>
+		  <td><input name="bancheck" type="checkbox" id=${user.id }></td>
 		</tr>
 		</c:forEach>
       <tr>

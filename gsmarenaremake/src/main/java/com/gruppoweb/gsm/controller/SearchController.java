@@ -18,7 +18,6 @@ public class SearchController {
 
 	@PostMapping("/search")
 	public String showResults(Model model, @RequestParam String keyword) {
-		System.out.println("si");
 		DeviceDAO dao = DBManager.getInstance().deviceDAO();
 		List<Device> resultsList = dao.findAllByKeyword(keyword);
 		model.addAttribute("resultsListPassed", resultsList);
