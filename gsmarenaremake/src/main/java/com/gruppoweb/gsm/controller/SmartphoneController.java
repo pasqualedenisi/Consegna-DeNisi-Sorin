@@ -20,31 +20,6 @@ import com.gruppoweb.gsm.persistence.dao.DeviceDAO;
 
 @Controller
 public class SmartphoneController {
-
-	@GetMapping("/ciao")
-	public String dothis() {
-		try {
-			Connection c = DBManager.getDataSource().getConnection();
-			String query = "select * from device;";
-			Statement st = c.createStatement();
-			ResultSet result = st.executeQuery(query);
-			
-			StringBuffer sb = new StringBuffer();
-			
-			while (result.next()) {
-				String name = result.getString(2);
-				String serialNumber = result.getString(3);
-				String brand = result.getString(4);
-				String tipo = result.getString(5);
-				sb.append(name + serialNumber + brand + tipo + "\n");
-			}
-			return sb.toString();
-		} catch (SQLException e) {
-			//TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "";
-	}
 	
 	@GetMapping("/smartphones")
 	public String showSmartphones(Model model) {

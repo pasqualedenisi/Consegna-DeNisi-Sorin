@@ -12,6 +12,7 @@ public interface DeviceDAO {
 	public Device findByPrimaryKey(Integer idToFind);
 	public List<Device> findAll();
 	public List<Device> findAllByType(Integer type);
+	public List<Device> findAllByKeyword(String keyword);
 	public void update(Device device);
 	public void delete(Device device);
 }

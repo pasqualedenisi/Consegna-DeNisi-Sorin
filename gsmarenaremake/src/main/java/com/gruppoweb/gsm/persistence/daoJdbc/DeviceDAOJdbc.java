@@ -157,4 +157,31 @@ public class DeviceDAOJdbc implements DeviceDAO {
 		return toReturn;
 	}
 
+	@Override
+	public List<Device> findAllByKeyword(String keyword) {
+		ArrayList<Device> toReturn = new ArrayList<Device>();
+		try {
+			Connection conn = source.getConnection();
+			String query = "select * from device where _name ~* '?'";
+			PreparedStatement statement = conn.prepareStatement(query);
+			statement.setString(1, keyword);
+			ResultSet rs = statement.executeQuery();
+			while (rs.next()) {
+				String name = rs.getString("_name");
+				String serialNumber = rs.getString("_serial_number");
+				Integer brand = rs.getInt("_brand");
+				Integer type = rs.getInt("_type");
+				String cpu = rs.getString("_cpu");
+				String ram = rs.getString("_ram");
+				Date releaseDate = rs.getDate("_release_date");
+				String rom = rs.getString("_rom");
+				String display = rs.getString("_display");
+				toReturn.add(new Device(name, serialNumber, brand, type, cpu, ram, releaseDate, rom, display));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return toReturn;
+	}
+
 }
